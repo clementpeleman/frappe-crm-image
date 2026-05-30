@@ -75,7 +75,7 @@ jobs:
             ls -la /home/frappe/frappe-bench/apps
 
           docker run --rm ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
-            bash -lc "cd /home/frappe/frappe-bench && python -c 'import crm; print(\"crm exists\")'"
+            bash -lc "cd /home/frappe/frappe-bench && ./env/bin/python -c 'import crm; print(\"crm exists\")'"
 
       - name: Build and push image
         uses: docker/build-push-action@v6
